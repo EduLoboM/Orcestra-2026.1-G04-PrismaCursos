@@ -1,0 +1,14 @@
+# ==== SO ====
+.DS_Store
+Thumbs.db
+
+# ==== Editores / IDEs ====
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# ==== SCSS cache ====
+.sass-cache/
+*.css.map

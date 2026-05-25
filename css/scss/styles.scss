@@ -1,0 +1,153 @@
+// ========================================
+// PrismaCursos — Estilos em SCSS
+// ========================================
+// Edite este arquivo e compile para CSS com:
+//   ./compilar-scss.sh
+// O resultado vai para css/styles.css
+// ========================================
+
+// ---------- Variáveis ----------
+$cor-primaria: #6c5ce7;
+$cor-secundaria: #a29bfe;
+$cor-fundo: #0f0f0f;
+$cor-superficie: #1a1a2e;
+$cor-texto: #e0e0e0;
+$cor-texto-claro: #b0b0b0;
+$cor-destaque: #fd79a8;
+
+$fonte-principal: 'Segoe UI', system-ui, -apple-system, sans-serif;
+
+$espacamento-sm: 0.5rem;
+$espacamento-md: 1rem;
+$espacamento-lg: 2rem;
+$espacamento-xl: 4rem;
+
+// ---------- Reset & base ----------
+*,
+*::before,
+*::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --cor-primaria: #{$cor-primaria};
+  --cor-secundaria: #{$cor-secundaria};
+  --cor-fundo: #{$cor-fundo};
+  --cor-superficie: #{$cor-superficie};
+  --cor-texto: #{$cor-texto};
+  --cor-texto-claro: #{$cor-texto-claro};
+  --cor-destaque: #{$cor-destaque};
+
+  --fonte-principal: #{$fonte-principal};
+
+  --espacamento-sm: #{$espacamento-sm};
+  --espacamento-md: #{$espacamento-md};
+  --espacamento-lg: #{$espacamento-lg};
+  --espacamento-xl: #{$espacamento-xl};
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: $fonte-principal;
+  background-color: $cor-fundo;
+  color: $cor-texto;
+  line-height: 1.6;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color: $cor-secundaria;
+  text-decoration: none;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $cor-destaque;
+  }
+}
+
+// ---------- Header / Navbar ----------
+#header {
+  background-color: $cor-superficie;
+  padding: $espacamento-md $espacamento-lg;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+#navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: $cor-primaria;
+
+  &:hover {
+    color: $cor-destaque;
+  }
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: $espacamento-md;
+}
+
+// ---------- Hero ----------
+#hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: $espacamento-xl $espacamento-lg;
+  flex: 1;
+
+  h1 {
+    font-size: 2.5rem;
+    margin-bottom: $espacamento-md;
+    background: linear-gradient(135deg, $cor-primaria, $cor-destaque);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  p {
+    font-size: 1.2rem;
+    color: $cor-texto-claro;
+  }
+}
+
+// ---------- Footer ----------
+#footer {
+  background-color: $cor-superficie;
+  text-align: center;
+  padding: $espacamento-md;
+  color: $cor-texto-claro;
+  font-size: 0.875rem;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+// ---------- Responsividade ----------
+@media (max-width: 768px) {
+  #hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .nav-links {
+    gap: $espacamento-sm;
+  }
+}
