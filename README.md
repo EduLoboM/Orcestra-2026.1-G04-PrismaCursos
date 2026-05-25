@@ -2,7 +2,7 @@
   <img src="assets/PrismaLogo.png" alt="PrismaCursos Logo" width="180">
 </p>
 
-<h1 align="center"><b>🌈⃤ Prisma Cursos</b></h1>
+<h1 align="center"><b>🌈 Prisma Cursos</b></h1>
 
 ## 📁 Estrutura
 
@@ -103,13 +103,14 @@ git branch
 ## 🔃 Fluxo de Trabalho
 
 ```mermaid
-graph LR
-    A["🔽 git clone"] --> B["🌿 git checkout -b feature/..."]
+graph TD
+    A["🔽 git clone do repositório"] --> B["🌿 git checkout -b feature/..."]
     B --> C["✏️ Editar arquivos"]
-    C --> D["💾 git add + commit"]
-    D --> E["🚀 git push"]
-    E --> F["🔃 Abrir Pull Request"]
-    F --> G["✅ Revisão + Merge"]
+    C --> D["💾 git add . + git commit"]
+    D --> E["🚀 git push origin feature/..."]
+    E --> F["🔃 Abrir Pull Request no GitHub"]
+    F --> G["👀 Revisão de alguém do grupo"]
+    G --> H["✅ Merge na main"]
 ```
 
 1. Faça `push` da sua branch
