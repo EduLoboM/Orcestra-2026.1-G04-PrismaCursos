@@ -11,3 +11,9 @@
 document.addEventListener("DOMContentLoaded", () => {
   console.log("PrismaCursos carregado com sucesso!");
 });
+
+
+document.querySelector("#nova-secao").addEventListener("click", () => {
+  console.log("Seção clicada!");
+});
+

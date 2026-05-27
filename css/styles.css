@@ -117,6 +117,13 @@ a:hover {
   color: var(--cor-texto-claro);
 }
 
+#contato {
+  background-color: #cf0505;
+  padding: 20px;
+}
+
+
+
 /* ---------- Footer ---------- */
 #footer {
   background-color: var(--cor-superficie);
