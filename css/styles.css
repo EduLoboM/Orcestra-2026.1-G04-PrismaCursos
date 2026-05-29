@@ -132,11 +132,6 @@ a:hover {
   margin-bottom: 40px; /* Dá um respiro antes de começar a imagem da carta logo abaixo */
 }
 
-/* Caso você queira zerar as margens padrão do H1 e H3 para o 'gap' controlar tudo perfeitamente: */
-.cabecalho-oferta h1,
-.cabecalho-oferta h3 {
-  margin: 0; 
-}
 /* ---------- DESCONTOS  ---------- */
 .triangulo-borda {
   width: 20%;  /*vai ocupar % do espaço do pai */
@@ -144,7 +139,7 @@ a:hover {
   min-width: 80px; 
   max-width: 150px; 
   aspect-ratio: 1 / 1; /*Trava a proporção em um quadrado perfeito (1 por 1) */
-  background-color: white; 
+  background-color: var(--cor-texto) ; 
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* pontos de corte do quadradi x1,y1(topo),x2,y2(ponta dir),x3,y3(ponta esq) */
   
   display: flex;
@@ -157,7 +152,6 @@ a:hover {
   /* Se você quiser uma borda de 4px, subtraia 8px (4 de cada lado) */
   width: calc(100% - 20px);  /*largura total que esse elemento deveria ter (100% do pai) e subtraia exatamente x pixels*/
   height: calc(100% - 10px); 
-  
   /* Como o pai já dita a proporção, o filho só acompanha */
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
   display: flex;
@@ -165,13 +159,14 @@ a:hover {
   align-items: center;
   justify-content: flex-end; 
   padding-bottom: 8%; /* Usar % no padding ajuda na responsividade do texto */
-  color: white; 
+  color:var(--cor-texto); 
+
   transition: background-color 0.3s ease; /* Transição para o Javascript */
 
 }
 .porcentagem {
   /* Usar unidades relativas como 'em' ou 'cqi' pode ser bom no futuro,mas um tamanho fixo flexível já resolve para começar */
-  font-size: 1.5rem; /* rem ~=16px */
+  font-size: 1.6rem; /* rem ~=16px */
   font-weight: bold;
   line-height: 1;
 }
@@ -182,7 +177,7 @@ a:hover {
 }
 /* --- AS SUAS 4 VARIANTES DE COR --- */
 /* falta eu pegar (HEX) no Figma e substitua aqui */
-.desconto-5 { background-color: #ff0000; }  
+.desconto-5 { background-color:crimson; }  
 .desconto-10 { background-color: #001aff; } 
 .desconto-15 { background-color: #0dff00; } 
 .desconto-20 { background-color: #ffff00; } 
@@ -203,14 +198,32 @@ a:hover {
 }
 
 .formulario-inputs {
-  /* O absolute permite que você mova os inputs livremente por cima da imagem */
   position: absolute; 
-  top: 25%; 
+  top: 30%; 
   left: 50%;
-  transform: translateX(-50%); /*move o elemento metade da própria largura para a esquerda*/
+  transform: translateX(-50%); 
   display: flex;
-  flex-direction: column; /* Deixa um input embaixo do outro */
-  gap: 30px; /* Espaçamento entre as caixinhas */
+  flex-direction: column; 
+  width: 30%; 
+}
+
+.formulario-inputs input { /*ESTILO DOS INPUTS */
+  width: 100%;
+  background-color: transparent; 
+  border: none;
+  border-bottom: 1px solid var(--cor-primaria); /* Cria a linha estilo caderno */
+  color: var(--cor-secundaria);
+  /* O PULO DO GATO DA FONTE: clamp(mínimo, flexível, máximo) */
+  font-size: clamp(12px, 1.5vw, 16px); 
+  
+  /* Espaçamento em % também acompanha o tamanho */
+  padding: 2% 0; 
+}
+.formulario-inputs input:focus { /* Remove a borda feia de foco do navegador */
+  outline: none;
+}
+.formulario-inputs input::placeholder {
+  color: var(--cor-primaria);
 }
 
 /* ---------- BOTAO ESFERA ---------- */
@@ -218,22 +231,19 @@ a:hover {
   display: flex;
   justify-content: center;
   align-items: center;
-  
-  width: 18%; /* Largura e alturar iguais para formar uma esfera */
-  height: 18%;
+  width: 14%; /* Largura e alturar iguais para formar uma esfera */
+  height: 14%;
   border-radius: 50%; /* Transforma o quadrado em círculo */
-  overflow: hidden; /* Corta qualquer pedaço da imagem que vaze do círculo */
-
   position: absolute; 
-  top: 63%; 
+  top: 65%; 
   left: 50%; 
-  transform: translateX(-50%); /* centraliza o botão no container */
+  transform: translateX(-50%);
 }
 .botao-esfera:hover {
-  transform: translateX(-50%) scale(1.2); /* preserva a centralização no hover */
+  transform: translateX(-50%) scale(1.1); /* preserva a centralização no hover */
 }
 .botao-esfera img {
-  width: 100%; /* preencher a esfera */
+  width: 100%;
   height: auto;
 }
 
@@ -263,7 +273,7 @@ a:hover {
 /* --- ESTILO DO TEXTO --- */
 .item-contato span {
   font-size: 1rem; 
-  color: #ffffff; 
+  color: var(--cor-texto-claro); 
   font-weight: 500;
 }
 
