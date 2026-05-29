@@ -122,7 +122,21 @@ a:hover {
   padding: 20px;
 }
 
+/* --- CABEÇALHO DA OFERTA --- */
+.cabecalho-oferta {
+  display: flex;
+  flex-direction: column; /* Empilha os elementos*/
+  align-items: center;    /* Alinha o centro do triângulo com o centro dos textos */
+  text-align: center;     /* Garante que o texto fique centralizado se quebrar para uma segunda linha */
+  gap: 25px; /* Define um espaçamento igual entre o h1, o triângulo e o h3 */
+  margin-bottom: 40px; /* Dá um respiro antes de começar a imagem da carta logo abaixo */
+}
 
+/* Caso você queira zerar as margens padrão do H1 e H3 para o 'gap' controlar tudo perfeitamente: */
+.cabecalho-oferta h1,
+.cabecalho-oferta h3 {
+  margin: 0; 
+}
 /* ---------- DESCONTOS  ---------- */
 .triangulo-borda {
   width: 20%;  /*vai ocupar % do espaço do pai */
