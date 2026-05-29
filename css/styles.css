@@ -118,11 +118,66 @@ a:hover {
 }
 
 #contato {
-  background-color: #cf0505;
+  background-color: #222222;
   padding: 20px;
 }
 
+/* ---------- DESCONTOS  ---------- */
 
+/* --- O Wrapper da Borda --- */
+.triangulo-borda {
+  width: 25%; /* : vai ocupar % do espaço do pai */
+  /* Limites de segurança para não ficar gigante nem minúsculo */
+  min-width: 80px; 
+  max-width: 150px; 
+  aspect-ratio: 1 / 1; /*Trava a proporção em um quadrado perfeito (1 por 1) */
+  background-color: white; 
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* pontos de corte do quadradi x1,y1(topo),x2,y2(ponta dir),x3,y3(ponta esq) */
+  
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.triangulo-conteudo {
+  /* o calc() garante que a borda branca tenha sempre o mesmo tamanho real */
+  /* Se você quiser uma borda de 4px, subtraia 8px (4 de cada lado) */
+  width: calc(100% - 15px); 
+  height: calc(100% - 6px); 
+  
+  /* Como o pai já dita a proporção, o filho só acompanha */
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-end; 
+
+  padding-bottom: 8%; /* Usar % no padding ajuda na responsividade do texto */
+  color: white; 
+  transition: background-color 0.3s ease; 
+
+}
+
+/* --- Estilo do Texto Responsivo --- */
+.porcentagem {
+  /* Usar unidades relativas como 'em' ou 'cqi' pode ser bom no futuro, 
+     mas um tamanho fixo flexível já resolve para começar */
+  font-size: 1.5rem; 
+  font-weight: bold;
+  line-height: 1;
+}
+.texto-off {
+  font-size: 0.9rem;
+  text-transform: uppercase;
+  margin-top: 2px;
+}
+/* --- AS SUAS 4 VARIANTES DE COR --- */
+/* falta eu pegar (HEX) no Figma e substitua aqui */
+.desconto-0 { background-color: #ff0000; }
+.desconto-5 { background-color: #d900ff; }  
+.desconto-10 { background-color: #001aff; } 
+.desconto-15 { background-color: #0dff00; } 
+.desconto-20 { background-color: #ffff00; } 
 
 
 /* ---------- CARTA  ---------- */
@@ -132,7 +187,6 @@ a:hover {
   width: min(90%, 1000px); /* Aumenta a carta e mantém responsiva */
   margin: 0 auto; /* Centraliza horizontalmente */
 }
-
 .fundo-carta {
   width: 100%;
   max-width: 100%;
@@ -151,21 +205,20 @@ a:hover {
   gap: 30px; /* Espaçamento entre as caixinhas */
 }
 
-
 /* ---------- BOTAO ESFERA ---------- */
 .botao-esfera {
   display: flex;
   justify-content: center;
   align-items: center;
   
-  width: 18%; /* Largura e altura devem ser iguais para formar uma esfera */
+  width: 18%; /* Largura e alturar iguais para formar uma esfera */
   height: 18%;
   border-radius: 50%; /* Transforma o quadrado em círculo */
   overflow: hidden; /* Corta qualquer pedaço da imagem que vaze do círculo */
 
   position: absolute; 
   top: 63%; 
-  left: 50%; /*alinhar horizontalmente*/
+  left: 50%; 
   transform: translateX(-50%); /* centraliza o botão no container */
 }
 .botao-esfera:hover {
@@ -175,6 +228,8 @@ a:hover {
   width: 100%; /* preencher a esfera */
   height: auto;
 }
+
+
 
 
 
