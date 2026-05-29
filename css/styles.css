@@ -128,10 +128,16 @@ a:hover {
   flex-direction: column; /* Empilha os elementos*/
   align-items: center;    /* Alinha o centro do triângulo com o centro dos textos */
   text-align: center;     /* Garante que o texto fique centralizado se quebrar para uma segunda linha */
-  gap: 25px; /* Define um espaçamento igual entre o h1, o triângulo e o h3 */
-  margin-bottom: 40px; /* Dá um respiro antes de começar a imagem da carta logo abaixo */
+  gap: 15px; /* Define um espaçamento igual entre o h1, o triângulo e o h3 */
+  margin-bottom: 30px; /* Dá um respiro antes de começar a imagem da carta logo abaixo */
 }
-
+.cabecalho-confirmation {
+  display: flex;
+  flex-direction: column; /* Empilha os elementos*/
+  text-align: center;     /* Garante que o texto fique centralizado se quebrar para uma segunda linha */
+  gap: 15px; /* Define um espaçamento igual entre o h1, o triângulo e o h3 */
+  margin-bottom: 30px; 
+}
 /* ---------- DESCONTOS  ---------- */
 .triangulo-borda {
   width: 20%;  /*vai ocupar % do espaço do pai */
@@ -171,14 +177,14 @@ a:hover {
   line-height: 1;
 }
 .texto-off {
-  font-size: 0.9rem;
+  font-size: 1rem;
   text-transform: uppercase;
   margin-top: 2px;
 }
 /* --- AS SUAS 4 VARIANTES DE COR --- */
 /* falta eu pegar (HEX) no Figma e substitua aqui */
-.desconto-5 { background-color:crimson; }  
-.desconto-10 { background-color: #001aff; } 
+.desconto-5 { background-color:var(--cor-destaque); }  
+.desconto-10 { background-color: var(--cor-primaria); } 
 .desconto-15 { background-color: #0dff00; } 
 .desconto-20 { background-color: #ffff00; } 
 
@@ -213,8 +219,7 @@ a:hover {
   border: none;
   border-bottom: 1px solid var(--cor-primaria); /* Cria a linha estilo caderno */
   color: var(--cor-secundaria);
-  /* O PULO DO GATO DA FONTE: clamp(mínimo, flexível, máximo) */
-  font-size: clamp(12px, 1.5vw, 16px); 
+  font-size: clamp(12px, 1.5vw, 16px);  /*clamp(MÍNIMO, VALOR_IDEAL, MÁXIMO) */
   
   /* Espaçamento em % também acompanha o tamanho */
   padding: 2% 0; 
