@@ -122,11 +122,10 @@ a:hover {
   padding: 20px;
 }
 
-/* ---------- DESCONTOS  ---------- */
 
-/* --- O Wrapper da Borda --- */
+/* ---------- DESCONTOS  ---------- */
 .triangulo-borda {
-  width: 25%; /* : vai ocupar % do espaço do pai */
+  width: 20%;  /*vai ocupar % do espaço do pai */
   /* Limites de segurança para não ficar gigante nem minúsculo */
   min-width: 80px; 
   max-width: 150px; 
@@ -142,8 +141,8 @@ a:hover {
 .triangulo-conteudo {
   /* o calc() garante que a borda branca tenha sempre o mesmo tamanho real */
   /* Se você quiser uma borda de 4px, subtraia 8px (4 de cada lado) */
-  width: calc(100% - 15px); 
-  height: calc(100% - 6px); 
+  width: calc(100% - 20px);  /*largura total que esse elemento deveria ter (100% do pai) e subtraia exatamente x pixels*/
+  height: calc(100% - 10px); 
   
   /* Como o pai já dita a proporção, o filho só acompanha */
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
@@ -151,18 +150,14 @@ a:hover {
   flex-direction: column;
   align-items: center;
   justify-content: flex-end; 
-
   padding-bottom: 8%; /* Usar % no padding ajuda na responsividade do texto */
   color: white; 
-  transition: background-color 0.3s ease; 
+  transition: background-color 0.3s ease; /* Transição para o Javascript */
 
 }
-
-/* --- Estilo do Texto Responsivo --- */
 .porcentagem {
-  /* Usar unidades relativas como 'em' ou 'cqi' pode ser bom no futuro, 
-     mas um tamanho fixo flexível já resolve para começar */
-  font-size: 1.5rem; 
+  /* Usar unidades relativas como 'em' ou 'cqi' pode ser bom no futuro,mas um tamanho fixo flexível já resolve para começar */
+  font-size: 1.5rem; /* rem ~=16px */
   font-weight: bold;
   line-height: 1;
 }
@@ -173,8 +168,7 @@ a:hover {
 }
 /* --- AS SUAS 4 VARIANTES DE COR --- */
 /* falta eu pegar (HEX) no Figma e substitua aqui */
-.desconto-0 { background-color: #ff0000; }
-.desconto-5 { background-color: #d900ff; }  
+.desconto-5 { background-color: #ff0000; }  
 .desconto-10 { background-color: #001aff; } 
 .desconto-15 { background-color: #0dff00; } 
 .desconto-20 { background-color: #ffff00; } 
@@ -230,6 +224,34 @@ a:hover {
 }
 
 
+/* --- CONTATOS --- */
+.bloco-contatos-rodape {
+  display: grid;
+  grid-template-columns: auto auto; /* Cria as 2 colunas perfeitas*/
+  column-gap: 40px; /* Espaço horizontal entre as colunas */
+  row-gap: 20px;    /*Espaço vertical entre as linhas */
+  /* O pulo do gato para centralizar o bloco inteiro na tela */
+  width: fit-content; 
+  margin: 40px auto 0 auto; 
+}
+
+/* (Ícone + Texto)*/
+.item-contato {
+  display: flex;
+  align-items: center; 
+  gap: 0.5rem; 
+}
+.icone-pequeno {
+  width: 1.5rem; 
+  height: 1.5rem;
+  object-fit: contain; 
+}
+/* --- ESTILO DO TEXTO --- */
+.item-contato span {
+  font-size: 1rem; 
+  color: #ffffff; 
+  font-weight: 500;
+}
 
 
 
