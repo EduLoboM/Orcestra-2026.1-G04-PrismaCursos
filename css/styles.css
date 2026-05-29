@@ -122,53 +122,61 @@ a:hover {
   padding: 20px;
 }
 
-/* ---------- */
+
+
+
+/* ---------- CARTA  ---------- */
 .carta-container {
   /* O position relative aqui é o segredo para segurar o formulário dentro da div */
-  position: relative; 
-  width: 400px; /* Ajuste para o tamanho real do seu design */
+  position: relative;
+  width: min(90%, 1000px); /* Aumenta a carta e mantém responsiva */
+  margin: 0 auto; /* Centraliza horizontalmente */
 }
 
 .fundo-carta {
   width: 100%;
+  max-width: 100%;
+  height: auto;
   display: block;
 }
 
 .formulario-inputs {
   /* O absolute permite que você mova os inputs livremente por cima da imagem */
   position: absolute; 
-  top: 100px; /* Altere esse valor para descer os inputs até a área do papel */
-  left: 50px; /* Altere para alinhar horizontalmente */
-  
+  top: 25%; 
+  left: 50%;
+  transform: translateX(-50%); /*move o elemento metade da própria largura para a esquerda*/
   display: flex;
   flex-direction: column; /* Deixa um input embaixo do outro */
-  gap: 15px; /* Espaçamento entre as caixinhas */
+  gap: 30px; /* Espaçamento entre as caixinhas */
 }
 
 
+/* ---------- BOTAO ESFERA ---------- */
 .botao-esfera {
   display: flex;
   justify-content: center;
   align-items: center;
   
-  width: 100px; /* Largura e altura devem ser iguais para formar uma esfera */
-  height: 100px;
+  width: 18%; /* Largura e altura devem ser iguais para formar uma esfera */
+  height: 18%;
   border-radius: 50%; /* Transforma o quadrado em círculo */
   overflow: hidden; /* Corta qualquer pedaço da imagem que vaze do círculo */
-  
-  /* Você pode adicionar a cor de fundo do Figma aqui se a imagem for transparente */
-  background-color: #f0f0f0; 
-  transition: transform 0.3s ease;
-}
 
-/* O efeitinho de hover que você mencionou antes */
+  position: absolute; 
+  top: 63%; 
+  left: 50%; /*alinhar horizontalmente*/
+  transform: translateX(-50%); /* centraliza o botão no container */
+}
 .botao-esfera:hover {
-  transform: scale(1.5); /* Aumenta 10% */
+  transform: translateX(-50%) scale(1.2); /* preserva a centralização no hover */
 }
 .botao-esfera img {
-  width: 100%; /* Faz a imagem preencher a esfera */
+  width: 100%; /* preencher a esfera */
   height: auto;
 }
+
+
 
 /* ---------- Footer ---------- */
 #footer {
