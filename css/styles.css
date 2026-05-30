@@ -183,10 +183,10 @@ a:hover {
 }
 /* --- AS SUAS 4 VARIANTES DE COR --- */
 /* falta eu pegar (HEX) no Figma e substitua aqui */
-.desconto-5 { background-color:var(--cor-destaque); }  
-.desconto-10 { background-color: var(--cor-primaria); } 
-.desconto-15 { background-color: #0dff00; } 
-.desconto-20 { background-color: #ffff00; } 
+.desconto-5 { background-color: var(--cor-destaque); }  
+.desconto-10 { background-color: blue; } 
+.desconto-15 { background-color: green } 
+.desconto-20 { background-color:red } 
 
 
 /* ---------- CARTA  ---------- */
