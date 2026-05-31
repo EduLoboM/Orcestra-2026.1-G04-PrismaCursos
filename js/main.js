@@ -26,14 +26,17 @@ let clicouCursos = false;
 let clicouSobre = false;
 let clicouContato = false;
 
+
 //FUNÇÃO QUE ATUALIZA O VISUAL
 function atualizarVisualDoDesconto() {
-  const fundoTriangulo = document.getElementById('selo-desconto');
+  
+  const fundoTriangulo = document.getElementById('cor-desconto');
   const textoPorcentagem = document.getElementById('valor-desconto');
 
   textoPorcentagem.innerText = descontoAtual + "%";  
   fundoTriangulo.className = "triangulo-conteudo desconto-" + descontoAtual; // Atualiza a cor e reescreve a classe. se desconto for 15, a string vira "triangulo-conteudo desconto-15"
 }
+
 
 // Cliques em Cursos,Sobre,Contato:
 document.getElementById('link-cursos').addEventListener('click', function() { 
