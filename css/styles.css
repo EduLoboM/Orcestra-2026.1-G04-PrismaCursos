@@ -118,7 +118,7 @@ a:hover {
 }
 
 #contato {
-  background-color: #222222;
+  background-color: var(--cor-fundo);
   padding: 20px;
 }
 
@@ -128,38 +128,39 @@ a:hover {
   flex-direction: column; /* Empilha os elementos*/
   align-items: center;    /* Alinha o centro do triângulo com o centro dos textos */
   text-align: center;     /* Garante que o texto fique centralizado se quebrar para uma segunda linha */
-  gap: 15px; /* Define um espaçamento igual entre o h1, o triângulo e o h3 */
-  margin-bottom: 30px; /* Dá um respiro antes de começar a imagem da carta logo abaixo */
+  gap: 15px; 
+  margin-bottom: 30px;
 }
 .cabecalho-confirmation {
   display: flex;
-  flex-direction: column; /* Empilha os elementos*/
-  text-align: center;     /* Garante que o texto fique centralizado se quebrar para uma segunda linha */
-  gap: 15px; /* Define um espaçamento igual entre o h1, o triângulo e o h3 */
+  flex-direction: column; 
+  text-align: center;     
+  gap: 15px; 
   margin-bottom: 30px; 
 }
+
 /* ---------- DESCONTOS  ---------- */
 .triangulo-borda {
-  width: 20%;  /*vai ocupar % do espaço do pai */
-  /* Limites de segurança para não ficar gigante nem minúsculo */
-  min-width: 80px; 
-  max-width: 150px; 
+  width: 25%;  /*vai ocupar % do espaço do pai */
+  /* Limites de segurança*/
+  min-width: 60px; 
+  max-width: 140px; 
   aspect-ratio: 1 / 1; /*Trava a proporção em um quadrado perfeito (1 por 1) */
   background-color: var(--cor-texto) ; 
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%); /* pontos de corte do quadradi x1,y1(topo),x2,y2(ponta dir),x3,y3(ponta esq) */
   
   display: flex;
-  justify-content: center;
+  justify-content: center; /**/
   align-items: center;
 }
 
 .triangulo-conteudo {
-  /* o calc() garante que a borda branca tenha sempre o mesmo tamanho real */
   /* Se você quiser uma borda de 4px, subtraia 8px (4 de cada lado) */
   width: calc(100% - 20px);  /*largura total que esse elemento deveria ter (100% do pai) e subtraia exatamente x pixels*/
   height: calc(100% - 10px); 
   /* Como o pai já dita a proporção, o filho só acompanha */
   clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -193,7 +194,7 @@ a:hover {
 .carta-container {
   /* O position relative aqui é o segredo para segurar o formulário dentro da div */
   position: relative;
-  width: min(90%, 1000px); /* Aumenta a carta e mantém responsiva */
+  width: min(90%, 1000px); /* Retorna qual for menor */
   margin: 0 auto; /* Centraliza horizontalmente */
 }
 .fundo-carta {
@@ -219,12 +220,10 @@ a:hover {
   border: none;
   border-bottom: 1px solid var(--cor-primaria); /* Cria a linha estilo caderno */
   color: var(--cor-secundaria);
-  font-size: clamp(12px, 1.5vw, 16px);  /*clamp(MÍNIMO, VALOR_IDEAL, MÁXIMO) */
-  
-  /* Espaçamento em % também acompanha o tamanho */
+  font-size: clamp(10px, 18px, 22px);  /*clamp(MÍNIMO, VALOR_IDEAL, MÁXIMO) */
   padding: 2% 0; 
 }
-.formulario-inputs input:focus { /* Remove a borda feia de foco do navegador */
+.formulario-inputs input:focus { /* Remove a borda feia de foco */
   outline: none;
 }
 .formulario-inputs input::placeholder {
@@ -257,14 +256,14 @@ a:hover {
 .bloco-contatos-rodape {
   display: grid;
   grid-template-columns: auto auto; /* Cria as 2 colunas perfeitas*/
-  column-gap: 40px; /* Espaço horizontal entre as colunas */
-  row-gap: 20px;    /*Espaço vertical entre as linhas */
-  /* O pulo do gato para centralizar o bloco inteiro na tela */
+  column-gap: 40px; 
+  row-gap: 20px;   
+  /*centralizar o bloco inteiro na tela */
   width: fit-content; 
-  margin: 40px auto 0 auto; 
+  margin: 10px auto 10px auto; 
 }
 
-/* (Ícone + Texto)*/
+/*(Ícone + Texto)*/
 .item-contato {
   display: flex;
   align-items: center; 
@@ -294,13 +293,61 @@ a:hover {
   border-top: 1px solid rgba(255, 255, 255, 0.05);
 }
 
-/* ---------- Responsividade ---------- */
-@media (max-width: 768px) {
-  #hero h1 {
-    font-size: 1.8rem;
+
+
+/* ===============
+   RESPONSIVIDADE 
+   =============== */
+
+/* --- TABLET */
+@media (min-width: 361px) and (max-width: 768px) {
+.formulario-inputs input { 
+  width: 100%;
+  font-size: clamp(18px, 1.5vw, 16px);  
+  padding: 1% 0; 
+}
+}
+
+/* --- MOBILE  --- */
+@media (max-width: 360px) {
+  .porcentagem {
+    font-size: 1rem; /* rem ~=16px */
+  }
+  .texto-off {
+    font-size: 0.7rem;
+  }
+  .formulario-inputs {
+  width: 20%; 
+}
+.formulario-inputs input { 
+  width: 100%;
+  font-size: clamp(11px, 1.5vw, 16px);  
+  padding: 1% 0; 
+}
+.carta-container {
+  
+  width: min(100%, 1000px); 
+}
+.bloco-contatos-rodape {
+    grid-template-columns: 1fr; /* 1 única coluna ocupando todo o espaço */
+    row-gap: 15px; /* Ajusta o espaço entre as linhas */
   }
 
-  .nav-links {
-    gap: var(--espacamento-sm);
+}
+
+/* --- TABLET E MOBILE (HEADER) --- */
+@media (max-width: 768px) {
+  
+  /* Faz a logo ficar em cima e os links embaixo, centralizados */
+  #navbar {
+    flex-direction: column;
+    text-align: center;
   }
+  .nav-links {
+    gap: 15px;
+  }
+  .cabecalho-oferta h1 {
+    font-size: 1.7rem;
+  }
+
 }
