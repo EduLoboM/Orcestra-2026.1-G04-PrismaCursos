@@ -124,18 +124,62 @@ flex-direction: column;
 align-items: center;
 justify-content: center;
 text-align: center;
-padding: var(--espacamento-md) var(--espacamento-lg);
+padding: var(--espacamento-xl) var(--espacamento-lg);
 flex: 1;
 }
 #apresentacao h1 {
   text-align: left;
 }
+/*Texto colorido para títulos(h1)*/
 .texto-colorido{
   font-size: 2.1rem;
   background: linear-gradient(to right,#FF0000,#FFFF07,#2BFF00,#1A38FF,#850099);
   -webkit-background-clip: text;
   background-clip: text;
   -webkit-text-fill-color: transparent;
+}
+/*Cards das trilhas profissionais - apresentação*/
+
+.container {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 100px 50px;
+}
+.container .card {
+  top: 50px;
+  position: relative;
+  height:70px;
+  width: 300px;
+  box-shadow: 0 35px 80px rgba(0,0,0,.15);
+  background: #000000;
+  border-radius: 20px;
+  transition: .5s;
+  border: solid 2px #e0e0e0;
+  overflow: hidden;
+}
+.container .card:hover {
+  background: linear-gradient(180deg, #000000,#000000,#0a1fa4);
+  height: 450px;
+  transition: .5s;
+  border: solid 2px #e0e0e0;
+}
+.container .card .trilha {
+  top: 10px;
+  position: absolute;
+  width: 300px;
+  height: 70px;
+  overflow: hidden;
+}
+.container .card .conteudo {
+  position: absolute;
+  width: 100%;
+  top: 70px;
+  overflow: hidden;
 }
 
 /* ---------- Footer ---------- */
