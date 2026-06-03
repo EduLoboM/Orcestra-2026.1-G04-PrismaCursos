@@ -117,6 +117,27 @@ a:hover {
   color: var(--cor-texto-claro);
 }
 
+/* ---------- Apresentação ---------- */
+#apresentacao {
+display: flex;
+flex-direction: column;
+align-items: center;
+justify-content: center;
+text-align: center;
+padding: var(--espacamento-md) var(--espacamento-lg);
+flex: 1;
+}
+#apresentacao h1 {
+  text-align: left;
+}
+.texto-colorido{
+  font-size: 2.1rem;
+  background: linear-gradient(to right,#FF0000,#FFFF07,#2BFF00,#1A38FF,#850099);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
 /* ---------- Footer ---------- */
 #footer {
   background-color: var(--cor-superficie);
