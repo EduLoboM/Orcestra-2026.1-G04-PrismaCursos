@@ -282,3 +282,186 @@ a {
     height: 42px;
   }
 }
+
+// ---------- Seção: Quem Somos ----------
+.quem-somos-container {
+  display: flex;
+  gap: var(--espacamento-xl);
+  padding: var(--espacamento-xl) var(--espacamento-lg);
+  max-width: 1200px;
+  margin: 0 auto;
+  align-items: center; /* Centraliza o conteúdo verticalmente */
+}
+
+/* Coluna da Esquerda (Textos) */
+.conteudo-texto {
+  flex: 1; 
+}
+
+/* Coluna da Direita (A grade da equipe) */
+.grade-equipe {
+  flex: 1; 
+}
+
+/* ---------- Tipografia e Textos ---------- */
+.titulo-vazado {
+  font-family: $fonte-titulo;
+  font-size: 3rem;
+  color: transparent; /* Deixa o preenchimento da letra invisível */
+  -webkit-text-stroke: 1.5px #d63031; /* Aplica a borda vermelha */
+  margin-bottom: var(--espacamento-md);
+  text-transform: uppercase; /* Garante que ficará tudo em maiúsculo */
+}
+
+.bloco-texto {
+  margin-bottom: var(--espacamento-md);
+
+  h2 {
+    font-family: $fonte-titulo;
+    font-size: 1.5rem;
+    margin-bottom: var(--espacamento-sm);
+    color: var(--cor-texto);
+  }
+
+  p {
+    font-family: $fonte-corpo;
+    color: var(--cor-texto-claro);
+  }
+
+  /* Ajustes na lista de Valores */
+  ul {
+    list-style-position: inside;
+    margin-top: var(--espacamento-sm);
+  }
+
+  li {
+    font-family: $fonte-corpo;
+    margin-bottom: 0.5rem;
+    color: var(--cor-texto-claro);
+  }
+
+  strong {
+    color: var(--cor-texto);
+  }
+}
+
+/* ---------- Grade da Equipe (Cartões) ---------- */
+.grade-equipe {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--espacamento-md);
+}
+
+/* Estilo Individual dos Cartões */
+.cartao-membro {
+  background-color: #464646; // Conforme o Figma
+  padding: var(--espacamento-md);
+  border-radius: 20px; // Conforme o Figma
+  text-align: center;
+  transition: transform 0.3s ease, box-shadow 0.3s ease; /* Prepara a animação do hover */
+
+  /* Efeito interativo ao passar o mouse */
+  &:hover {
+    transform: translateY(-5px); /* Faz o cartão "flutuar" levemente para cima */
+  }
+
+  h3 {
+    font-family: $fonte-titulo;
+    font-size: 1.2rem;
+    color: var(--cor-texto);
+    font-weight: 500;
+    margin-top: 10px;
+  }
+
+  p {
+    font-family: $fonte-corpo;
+    font-size: 0.9rem;
+    color: var(--cor-texto-claro);
+    margin-top: 5px;
+  }
+}
+
+/* Estilização da Foto de Perfil */
+.foto-perfil {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  object-fit: cover; /* Garante que a foto não fique esticada ou achatada */
+  border: 2px solid var(--cor-texto);
+  margin-bottom: var(--espacamento-sm);
+}
+
+/* Cores das bordas com Efeito de Luz de Fundo (Glow) */
+.borda-vermelha {
+  border: 4px solid #FF0000;
+  box-shadow: 0 0 10px rgba(255, 0, 0, 0.2);
+  &:hover { box-shadow: 0 0 25px rgba(255, 0, 0, 0.8); }
+}
+.borda-azul {
+  border: 4px solid #0051FF;
+  box-shadow: 0 0 10px rgba(0, 81, 255, 0.2);
+  &:hover { box-shadow: 0 0 25px rgba(0, 81, 255, 0.8); }
+}
+.borda-roxa {
+  border: 4px solid #DD00FF;
+  box-shadow: 0 0 10px rgba(221, 0, 255, 0.2);
+  &:hover { box-shadow: 0 0 25px rgba(221, 0, 255, 0.8); }
+}
+.borda-amarela {
+  border: 4px solid #FFFF07;
+  box-shadow: 0 0 10px rgba(255, 255, 7, 0.2);
+  &:hover { box-shadow: 0 0 25px rgba(255, 255, 7, 0.8); }
+}
+
+/* ---------- Responsividade Quem Somos Mobile ---------- */
+@media (max-width: 768px) {
+  /* Quebra o layout de lado-a-lado para uma coluna empilhada verticalmente */
+  .quem-somos-container {
+    flex-direction: column; 
+    gap: var(--espacamento-lg);
+    padding: var(--espacamento-lg) var(--espacamento-md);
+  }
+
+  /* Muda a grade da equipe de 2x2 para 1 única coluna (um cartão embaixo do outro) */
+  .grade-equipe {
+    grid-template-columns: 1fr; 
+  }
+
+  /* Diminui um pouco a fonte do título vazado para caber perfeitamente na tela do celular */
+  .titulo-vazado {
+    font-size: 2.2rem;
+  }
+
+  /* --- TRANSFORMA OS CARTÕES EM RETÂNGULOS HORIZONTAIS NO MOBILE --- */
+  .cartao-membro {
+    display: grid;
+    grid-template-columns: auto 1fr; /* Foto na esquerda, textos preenchendo o resto */
+    grid-template-rows: auto auto; /* Cria duas linhas virtuais: uma pro nome, outra pro cargo */
+    column-gap: var(--espacamento-md); /* Espaço entre a foto e o texto */
+    align-items: center;
+    text-align: left; /* Alinha os textos à esquerda ao invés do centro */
+    padding: var(--espacamento-sm) var(--espacamento-md); /* Achata um pouco o cartão verticalmente */
+
+    h3 {
+      grid-column: 2; /* Coloca o nome na segunda coluna */
+      grid-row: 1; /* Na primeira linha */
+      align-self: end; /* Empurra o nome um pouquinho pra baixo */
+      margin-top: 0;
+    }
+
+    p {
+      grid-column: 2; /* Coloca o cargo na segunda coluna */
+      grid-row: 2; /* Na segunda linha */
+      align-self: start; /* Empurra o cargo um pouquinho pra cima */
+      margin-top: 0;
+    }
+  }
+
+  .foto-perfil {
+    grid-column: 1; /* Posiciona a foto na primeira coluna */
+    grid-row: 1 / 3; /* Faz a foto se esticar e ocupar as duas linhas de texto */
+    margin-bottom: 0; /* Remove a margem inferior que existia no desktop */
+    width: 65px; /* Reduz um pouquinho o tamanho da foto no celular */
+    height: 65px;
+  }
+}

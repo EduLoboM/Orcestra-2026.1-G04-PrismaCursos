@@ -3,13 +3,11 @@
  *
  * Adicione aqui toda a lógica JavaScript do projeto.
  * Mantenha funções pequenas e bem nomeadas.
- */
 "use strict";
 
 // ========== Inicialização ==========
 document.addEventListener("DOMContentLoaded", () => {
   console.log("PrismaCursos carregado com sucesso!");
-
   // ========== Hamburger Menu Toggle ==========
   const hamburger = document.getElementById("hamburger-btn");
   const overlay = document.getElementById("menu-overlay");
