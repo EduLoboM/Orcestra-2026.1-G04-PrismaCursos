@@ -7,6 +7,7 @@
   <title>PrismaCursos</title>
   <link rel="stylesheet" href="css/styles.css">
 </head>
+
 <body>
 
   <!-- ============ HEADER ============ -->
@@ -15,20 +16,69 @@
       <a href="#" class="logo">PrismaCursos</a>
       <ul class="nav-links">
         <li><a href="#">Home</a></li>
-        <li><a href="#">Cursos</a></li>
-        <li><a href="#">Sobre</a></li>
-        <li><a href="#">Contato</a></li>
+        <li><a href="#" id="link-cursos">Cursos</a></li>
+        <li><a href="#" id="link-sobre">Sobre</a></li>
+        <li><a href="#" id="link-contato">Contato</a></li>
       </ul>
     </nav>
   </header>
 
+
   <!-- ============ MAIN ============ -->
-  <main id="main-content">
-    <section id="hero">
-      <h1>Bem-vindo ao PrismaCursos</h1>
-      <p>Sua plataforma de cursos online.</p>
-    </section>
-  </main>
+<main id="main-content">
+ <section id="contato">
+
+ <div class="cabecalho-oferta">
+  <h1>Parábens, Você garantiu:</h1>
+  <div class="triangulo-borda">
+    <div id="cor-desconto" class="triangulo-conteudo desconto-5"> <!--há duas classes nesse elemento! t-c(estrutura) e desconto-x(estilo/cor)  -->
+      <span id="valor-desconto" class="porcentagem">5%</span>
+      <span class="texto-off">OFF</span>
+    </div>
+  </div>
+  <h3>Preencha o formulário abaixo e garanta sua oferta especial !</h3>
+ </div>
+
+
+<div class="carta-container">
+  <img src="assets/envelope.png" alt="Carta aberta" class="fundo-carta">
+
+  <form class="formulario-inputs">
+    <input type="text" id="input-nome" placeholder="Nome">
+    <input type="email"id="input-email" placeholder="E-mail">
+    <input type="tel" id="input-celular" placeholder="Celular">
+    <input type="text" id="input-curso"placeholder="Curso">
+    <input type="text" id="input-assunto"placeholder="Assunto">
+  </form>
+
+  <a href="confirmation.html" id="btn-enviar" class="botao-esfera">
+    <img src="assets/selo.png" alt="Ícone do botão">
+  </a>
+ </div>
+
+  <div class="bloco-contatos-rodape">
+     <div class="item-contato">
+      <img src="assets/icon-instagram.svg" alt="Logo Instagram" class="icone-pequeno">
+      <span>@Prisma.cursos</span>
+    </div>
+    
+    <div class="item-contato">
+      <img src="assets/icon-telefone.svg" alt="Logo Telefone" class="icone-pequeno">
+      <span>(61) 99180-8008</span>
+    </div>
+
+    <div class="item-contato">
+      <img src="assets/icon-facebook.svg" alt="Logo Facebook" class="icone-pequeno">
+      <span>@Prisma.cursos</span>
+    </div>
+    
+    <div class="item-contato">
+      <img src="assets/icon-email.svg" alt="Logo E-mail" class="icone-pequeno">
+      <span>Prismac@gmail.com</span>
+    </div>
+  </div>
+
+</section> </main>
 
   <!-- ============ APRESENTAÇÃO ============ -->
   <div id="apresentacao">
