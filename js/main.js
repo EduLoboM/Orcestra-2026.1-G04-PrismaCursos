@@ -62,7 +62,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
   function showSlide(index) {
     if (slides.length === 0) return;
-    
+
     if (index >= slides.length) {
       slideIndex = 0;
     } else if (index < 0) {
@@ -100,7 +100,7 @@ document.addEventListener("DOMContentLoaded", () => {
       showSlide(slideIndex - 1);
       startAutoplay();
     });
-    
+
     nextBtn.addEventListener("click", () => {
       showSlide(slideIndex + 1);
       startAutoplay();
@@ -128,7 +128,7 @@ document.querySelector("#nova-secao").addEventListener("click", () => {
 
 
 // ------ GAMIFICAÇÃO DESCONTO PROGESSIVO ------
-let descontoAtual = 5; 
+let descontoAtual = 5;
 
 //flags: evitar o desconto infinito
 let clicouCursos = false;
@@ -138,11 +138,11 @@ let clicouContato = false;
 
 //FUNÇÃO QUE ATUALIZA O VISUAL
 function atualizarVisualDoDesconto() {
-  
+
   const fundoTriangulo = document.getElementById('cor-desconto');
   const textoPorcentagem = document.getElementById('valor-desconto');
 
-  textoPorcentagem.innerText = descontoAtual + "%";  
+  textoPorcentagem.innerText = descontoAtual + "%";
   fundoTriangulo.className = "triangulo-conteudo desconto-" + descontoAtual; // Atualiza a cor e reescreve a classe. se desconto for 15, a string vira "triangulo-conteudo desconto-15"
 }
 
@@ -150,10 +150,10 @@ function atualizarVisualDoDesconto() {
 // Cliques em Cursos,Sobre,Contato:
 const linkCursos = document.getElementById('menu-link-cursos') || document.getElementById('link-cursos');
 if (linkCursos) {
-  linkCursos.addEventListener('click', function() { 
+  linkCursos.addEventListener('click', function () {
     if (clicouCursos === false) { //só adiciona 1vez
-      descontoAtual += 5; 
-      clicouCursos = true;               
+      descontoAtual += 5;
+      clicouCursos = true;
       atualizarVisualDoDesconto();   // Roda a função que muda a tela
     }
   });
@@ -161,9 +161,9 @@ if (linkCursos) {
 
 const linkSobre = document.getElementById('menu-link-quem-somos') || document.getElementById('link-sobre');
 if (linkSobre) {
-  linkSobre.addEventListener('click', function() {
+  linkSobre.addEventListener('click', function () {
     if (clicouSobre === false) {
-      descontoAtual += 5; 
+      descontoAtual += 5;
       clicouSobre = true;
       atualizarVisualDoDesconto();
     }
@@ -172,7 +172,7 @@ if (linkSobre) {
 
 const linkContato = document.getElementById('menu-link-contato') || document.getElementById('link-contato');
 if (linkContato) {
-  linkContato.addEventListener('click', function() {
+  linkContato.addEventListener('click', function () {
     if (clicouContato === false) {
       descontoAtual += 5;
       clicouContato = true;
@@ -187,12 +187,12 @@ const btnEnviar = document.getElementById('btn-enviar'); //Pegamos o botão no H
 
 if (btnEnviar) {
   //lista de cursos válidos 
-  const cursosValidos = ['devops','gestão de projetos','ui/ux', 'design 3d',
-    'gestão pessoal','data analytics','motion design','design gráfico',
-    'desenvolvimento full stack','cybersecurity','gestão de projetos',
-    'marketing digital','liderança e gestão de pessoas']; 
+  const cursosValidos = ['devops', 'gestão de projetos', 'ui/ux', 'design 3d',
+    'gestão pessoal', 'data analytics', 'motion design', 'design gráfico',
+    'desenvolvimento full stack', 'cybersecurity', 'gestão de projetos',
+    'marketing digital', 'liderança e gestão de pessoas'];
 
-  btnEnviar.addEventListener('click', function(evento) { //evento é um objeto do js q guarda informacoes da açao(no caso click),do elemento q sofreu a ação...
+  btnEnviar.addEventListener('click', function (evento) { //evento é um objeto do js q guarda informacoes da açao(no caso click),do elemento q sofreu a ação...
     evento.preventDefault(); // impede que o <a>(link) te leve para a outra página automaticamente
 
     // Pegamos os valores que o usuário digitou e tiramos os espaços em branco nas pontas (trim)
@@ -219,13 +219,13 @@ if (btnEnviar) {
     // 3. Validação de Celular (Exige entre 10 e 11 números)
     const apenasNumerosCelular = celular.replace(/\D/g, ''); // O \D remove tudo que não for número (espaços, traços, parênteses) antes de contar
     if (celular && (apenasNumerosCelular.length < 10 || apenasNumerosCelular.length > 11)) {
-      erros.push("O número de celular deve seguir o formato (XX) XXXXX-XXXX e o número deve ter de 10 a 11 dígitos)."); 
+      erros.push("O número de celular deve seguir o formato (XX) XXXXX-XXXX e o número deve ter de 10 a 11 dígitos).");
     }
 
     // RESULTADO FINAL
     if (erros.length > 0) { //exibe os alertas e NÃO muda de página
       alert(erros.join('\n\n')); // Junta todos os erros com uma quebra de linha e exibe
-    } 
+    }
     else {
       const paginaDestino = btnEnviar.getAttribute('href'); //extrai o link no href do btnEnviar
       window.location.href = paginaDestino; //mudamos de pág manualmente
