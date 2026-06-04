@@ -1,8 +1,8 @@
 /**
  * PrismaCursos — Script principal
- *
  * Adicione aqui toda a lógica JavaScript do projeto.
  * Mantenha funções pequenas e bem nomeadas.
+ */
 "use strict";
 
 // ========== Inicialização ==========
