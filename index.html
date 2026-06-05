@@ -62,7 +62,7 @@
           </a>
         </li>
         <li class="menu-item">
-          <a href="#depoimento" class="menu-link" id="menu-link-depoimento">
+          <a href="#depoimentos" class="menu-link" id="menu-link-depoimento">
             <span class="menu-icon">▲</span>
             <span class="menu-label">DEPOIMENTOS</span>
           </a>
@@ -147,6 +147,125 @@
             </div>
           </div>
         </div>
+      </div>
+    </section>
+
+    <!-- ============ SEÇÃO: QUEM SOMOS ============ -->
+    <section id="quem-somos" class="quem-somos-container">
+      <div class="conteudo-texto">
+        <h1 class="titulo-vazado">Quem Somos</h1>
+        
+        <div class="bloco-texto">
+          <h2>Nossa Missão</h2>
+          <p>Na Prisma Cursos, transformamos ambição em realidade. Somos um instituto de educação profissionalizante especializado nas áreas de tecnologia, design e gestão. Nosso objetivo é abrir portas, seja para jovens em busca da primeira oportunidade no mercado de trabalho ou para profissionais que desejam reinventar sua trajetória.</p>
+        </div>
+
+        <div class="bloco-texto">
+          <h2>Nossa História</h2>
+          <p>Nascemos para resolver um problema real: a falta de tempo e de prática que afastam talentos do mercado. Criamos nosso modelo híbrido para unir a conveniência do online com a força da imersão presencial. Hoje, a Prisma é referência em conectar alunos às melhores oportunidades em tecnologia, design e gestão.</p>
+        </div>
+
+        <div class="bloco-texto">
+          <h2>Nossos Valores</h2>
+          <p>Nossa experiência apoia-se em três pilares para transformar sua carreira:</p>
+          <ul>
+            <li><strong>Inovação Prática:</strong> Foco nas ferramentas e demandas que o mercado realmente exige hoje.</li>
+            <li><strong>Acessibilidade:</strong> Ensino que se adapta à sua rotina, sem abrir mão da mentoria e do contato humano.</li>
+            <li><strong>Foco em Resultados:</strong> Nosso maior sucesso não é o seu certificado, mas a sua contratação.</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="grade-equipe">
+        <div class="cartao-membro borda-vermelha">
+          <img src="assets/antonio_lucas.jpg" alt="Foto de Antônio Lucas" class="foto-perfil">
+          <h3>Antônio Lucas</h3>
+          <p>CFO - Diretor Financeiro</p>
+        </div>
+
+        <div class="cartao-membro borda-azul">
+          <img src="assets/pedro_americo.jpg" alt="Foto de Pedro Américo" class="foto-perfil">
+          <h3>Pedro Américo</h3>
+          <p>CEO & Fundador</p>
+        </div>
+
+        <div class="cartao-membro borda-roxa">
+          <img src="assets/maria_clara.jpg" alt="Foto de Maria Clara" class="foto-perfil">
+          <h3>Maria Clara</h3>
+          <p>Gerente de RH</p>
+        </div>
+
+        <div class="cartao-membro borda-amarela">
+          <img src="assets/gabriel_diniz.jpg" alt="Foto de Gabriel Diniz" class="foto-perfil">
+          <h3>Gabriel Diniz</h3>
+          <p>CCO - Diretor de Cursos</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ QUIZ ============ -->
+    <section id="quiz" class="quiz-section">
+
+      <!-- Barra de progresso global -->
+      <div class="quiz-progress" id="quiz-global-progress" data-step="1">
+        <div class="quiz-progress__track"></div>
+        <div class="quiz-progress__fill" id="quiz-progress-fill" style="width: 33.3%"></div>
+      </div>
+
+      <!-- Step 1 -->
+      <div class="quiz-step active" data-step="1">
+        <h2 class="quiz-question" id="quiz-question-1">
+          O que você procura aqui na Prisma? Uma melhoria de carreira? Ou aprender novas skills?
+        </h2>
+
+        <div class="quiz-options">
+          <button class="quiz-btn" id="quiz-btn-hobby" data-answer="hobby" type="button">HOBBY</button>
+          <button class="quiz-btn" id="quiz-btn-profissao" data-answer="profissao" type="button">PROFISSÃO</button>
+          <button class="quiz-btn" id="quiz-btn-outros" data-answer="outros" type="button">OUTROS</button>
+        </div>
+      </div>
+
+      <!-- Step 2 -->
+      <div class="quiz-step" data-step="2">
+        <h2 class="quiz-question" id="quiz-question-2">
+          O que você prefere? Atender cursos presencialmente ou online?
+        </h2>
+
+        <div class="quiz-options">
+          <button class="quiz-btn" id="quiz-btn-presencial" data-answer="presencial" type="button">PRESENCIAL</button>
+          <button class="quiz-btn" id="quiz-btn-online" data-answer="online" type="button">ONLINE</button>
+          <button class="quiz-btn" id="quiz-btn-naosei" data-answer="naosei" type="button">NÃO SEI</button>
+        </div>
+      </div>
+
+      <!-- Step 3 -->
+      <div class="quiz-step" data-step="3">
+        <h2 class="quiz-question" id="quiz-question-3">
+          Qual área do conhecimento você está procurando se aprimorar aqui na Prisma?
+        </h2>
+
+        <div class="quiz-options">
+          <button class="quiz-btn" id="quiz-btn-design" data-answer="design" type="button">DESIGN</button>
+          <button class="quiz-btn" id="quiz-btn-tecnologia" data-answer="tecnologia" type="button">TECNOLOGIA</button>
+          <button class="quiz-btn" id="quiz-btn-gestao" data-answer="gestao" type="button">GESTÃO</button>
+        </div>
+      </div>
+
+      <!-- Resultado -->
+      <div class="quiz-step quiz-result" data-step="result">
+        <h2 class="quiz-question quiz-result__text" id="quiz-result-text">
+          <!-- Preenchido via JS -->
+        </h2>
+        <div class="quiz-result__image-wrapper" id="quiz-result-image-wrapper">
+          <img class="quiz-result__image" id="quiz-result-image" src="" alt="Imagem do curso recomendado">
+        </div>
+        <div class="quiz-result__arrow" id="quiz-result-arrow">
+          <svg width="24" height="80" viewBox="0 0 24 80" fill="none">
+            <line x1="12" y1="0" x2="12" y2="68" stroke="#EFEFEF" stroke-width="2"/>
+            <path d="M4 60 L12 76 L20 60" stroke="#EFEFEF" stroke-width="2" fill="none"/>
+          </svg>
+        </div>
+
       </div>
     </section>
 
@@ -298,122 +417,41 @@
       </p>
     </section>
 
-    <!-- ============ SEÇÃO: QUEM SOMOS ============ -->
-    <section id="quem-somos" class="quem-somos-container">
-      <div class="conteudo-texto">
-        <h1 class="titulo-vazado">Quem Somos</h1>
-        
-        <div class="bloco-texto">
-          <h2>Nossa Missão</h2>
-          <p>Na Prisma Cursos, transformamos ambição em realidade. Somos um instituto de educação profissionalizante especializado nas áreas de tecnologia, design e gestão. Nosso objetivo é abrir portas, seja para jovens em busca da primeira oportunidade no mercado de trabalho ou para profissionais que desejam reinventar sua trajetória.</p>
+    <!-- ============ DEPOIMENTOS ============ -->
+    <section id="depoimentos" class="depoimentos-container">
+      <div class="depoimentos-wrapper">
+        <h2 class="depoimentos-titulo">Depoimentos</h2>
+        <div class="depoimentos-grid">
+
+          <div class="depoimentos-card">
+            <img class="depoimentos-avatar" src="assets/img/JasmineRodrigues.jpg" alt="Jasmine Rodrigues">
+            <div class="depoimentos-estrelas">☆☆☆☆☆</div>
+            <p class="depoimentos-nome">Jasmine Rodrigues</p>
+            <p class="depoimentos-texto">"A estrutura do site é bem intuitiva, além do conteúdo atualizado, a gamificação deixou o aprendizado muito mais divertido e envolvente."</p>
+          </div>
+
+          <div class="depoimentos-card">
+            <img class="depoimentos-avatar" src="assets/img/TiagoCarvalho.jpg" alt="Tiago Carvalho">
+            <div class="depoimentos-estrelas">☆☆☆☆☆</div>
+            <p class="depoimentos-nome">Tiago Carvalho</p>
+            <p class="depoimentos-texto">"Buscava uma forma de me atualizar e encontrei na Prisma Cursos a oportunidade perfeita. O curso foi direto ao ponto e já aplico os conhecimentos no meu trabalho."</p>
+          </div>
+
+          <div class="depoimentos-card">
+            <img class="depoimentos-avatar" src="assets/img/GuilhermeOliveira.jpeg" alt="Guilherme Oliveira">
+            <div class="depoimentos-estrelas">☆☆☆☆☆</div>
+            <p class="depoimentos-nome">Guilherme Oliveira</p>
+            <p class="depoimentos-texto">"Eu tinha alguma experiência na área, mas o curso me deu segurança para entrar no mercado. Hoje trabalho em uma empresa de tecnologia e continuo aprendendo."</p>
+          </div>
+
+          <div class="depoimentos-card">
+            <img class="depoimentos-avatar" src="assets/img/EstherBianchi.jpg" alt="Esther Bianchi">
+            <div class="depoimentos-estrelas">☆☆☆☆☆</div>
+            <p class="depoimentos-nome">Esther Bianchi</p>
+            <p class="depoimentos-texto">"A Prisma Cursos me ajudou a conquistar meu primeiro estágio. As aulas são práticas e os professores são muito qualificados."</p>
+          </div>
+
         </div>
-
-        <div class="bloco-texto">
-          <h2>Nossa História</h2>
-          <p>Nascemos para resolver um problema real: a falta de tempo e de prática que afastam talentos do mercado. Criamos nosso modelo híbrido para unir a conveniência do online com a força da imersão presencial. Hoje, a Prisma é referência em conectar alunos às melhores oportunidades em tecnologia, design e gestão.</p>
-        </div>
-
-        <div class="bloco-texto">
-          <h2>Nossos Valores</h2>
-          <p>Nossa experiência apoia-se em três pilares para transformar sua carreira:</p>
-          <ul>
-            <li><strong>Inovação Prática:</strong> Foco nas ferramentas e demandas que o mercado realmente exige hoje.</li>
-            <li><strong>Acessibilidade:</strong> Ensino que se adapta à sua rotina, sem abrir mão da mentoria e do contato humano.</li>
-            <li><strong>Foco em Resultados:</strong> Nosso maior sucesso não é o seu certificado, mas a sua contratação.</li>
-          </ul>
-        </div>
-      </div>
-
-      <div class="grade-equipe">
-        <div class="cartao-membro borda-vermelha">
-          <img src="assets/antonio_lucas.jpg" alt="Foto de Antônio Lucas" class="foto-perfil">
-          <h3>Antônio Lucas</h3>
-          <p>CFO - Diretor Financeiro</p>
-        </div>
-
-        <div class="cartao-membro borda-azul">
-          <img src="assets/pedro_americo.jpg" alt="Foto de Pedro Américo" class="foto-perfil">
-          <h3>Pedro Américo</h3>
-          <p>CEO & Fundador</p>
-        </div>
-
-        <div class="cartao-membro borda-roxa">
-          <img src="assets/maria_clara.jpg" alt="Foto de Maria Clara" class="foto-perfil">
-          <h3>Maria Clara</h3>
-          <p>Gerente de RH</p>
-        </div>
-
-        <div class="cartao-membro borda-amarela">
-          <img src="assets/gabriel_diniz.jpg" alt="Foto de Gabriel Diniz" class="foto-perfil">
-          <h3>Gabriel Diniz</h3>
-          <p>CCO - Diretor de Cursos</p>
-        </div>
-      </div>
-    </section>
-
-    <!-- ============ QUIZ ============ -->
-    <section id="quiz" class="quiz-section">
-
-      <!-- Barra de progresso global -->
-      <div class="quiz-progress" id="quiz-global-progress" data-step="1">
-        <div class="quiz-progress__track"></div>
-        <div class="quiz-progress__fill" id="quiz-progress-fill" style="width: 33.3%"></div>
-      </div>
-
-      <!-- Step 1 -->
-      <div class="quiz-step active" data-step="1">
-        <h2 class="quiz-question" id="quiz-question-1">
-          O que você procura aqui na Prisma? Uma melhoria de carreira? Ou aprender novas skills?
-        </h2>
-
-        <div class="quiz-options">
-          <button class="quiz-btn" id="quiz-btn-hobby" data-answer="hobby" type="button">HOBBY</button>
-          <button class="quiz-btn" id="quiz-btn-profissao" data-answer="profissao" type="button">PROFISSÃO</button>
-          <button class="quiz-btn" id="quiz-btn-outros" data-answer="outros" type="button">OUTROS</button>
-        </div>
-      </div>
-
-      <!-- Step 2 -->
-      <div class="quiz-step" data-step="2">
-        <h2 class="quiz-question" id="quiz-question-2">
-          O que você prefere? Atender cursos presencialmente ou online?
-        </h2>
-
-        <div class="quiz-options">
-          <button class="quiz-btn" id="quiz-btn-presencial" data-answer="presencial" type="button">PRESENCIAL</button>
-          <button class="quiz-btn" id="quiz-btn-online" data-answer="online" type="button">ONLINE</button>
-          <button class="quiz-btn" id="quiz-btn-naosei" data-answer="naosei" type="button">NÃO SEI</button>
-        </div>
-      </div>
-
-      <!-- Step 3 -->
-      <div class="quiz-step" data-step="3">
-        <h2 class="quiz-question" id="quiz-question-3">
-          Qual área do conhecimento você está procurando se aprimorar aqui na Prisma?
-        </h2>
-
-        <div class="quiz-options">
-          <button class="quiz-btn" id="quiz-btn-design" data-answer="design" type="button">DESIGN</button>
-          <button class="quiz-btn" id="quiz-btn-tecnologia" data-answer="tecnologia" type="button">TECNOLOGIA</button>
-          <button class="quiz-btn" id="quiz-btn-gestao" data-answer="gestao" type="button">GESTÃO</button>
-        </div>
-      </div>
-
-      <!-- Resultado -->
-      <div class="quiz-step quiz-result" data-step="result">
-        <h2 class="quiz-question quiz-result__text" id="quiz-result-text">
-          <!-- Preenchido via JS -->
-        </h2>
-        <div class="quiz-result__image-wrapper" id="quiz-result-image-wrapper">
-          <img class="quiz-result__image" id="quiz-result-image" src="" alt="Imagem do curso recomendado">
-        </div>
-        <div class="quiz-result__arrow" id="quiz-result-arrow">
-          <svg width="24" height="80" viewBox="0 0 24 80" fill="none">
-            <line x1="12" y1="0" x2="12" y2="68" stroke="#EFEFEF" stroke-width="2"/>
-            <path d="M4 60 L12 76 L20 60" stroke="#EFEFEF" stroke-width="2" fill="none"/>
-          </svg>
-        </div>
-
       </div>
     </section>
 
@@ -468,43 +506,6 @@
         </div>
       </div>
     </section>
-
-    <section id="depoimentos" class="depoimentos-container">
-  <div class="depoimentos-wrapper">
-    <h2 class="depoimentos-titulo">Depoimentos</h2>
-    <div class="depoimentos-grid">
-
-      <div class="depoimentos-card">
-        <img class="depoimentos-avatar" src="assets/img/JasmineRodrigues.jpg" alt="Jasmine Rodrigues">
-        <div class="depoimentos-estrelas">☆☆☆☆☆</div>
-        <p class="depoimentos-nome">Jasmine Rodrigues</p>
-        <p class="depoimentos-texto">"A estrutura do site é bem intuitiva, além do conteúdo atualizado, a gamificação deixou o aprendizado muito mais divertido e envolvente."</p>
-      </div>
-
-      <div class="depoimentos-card">
-        <img class="depoimentos-avatar" src="assets/img/TiagoCarvalho.jpg" alt="Tiago Carvalho">
-        <div class="depoimentos-estrelas">☆☆☆☆☆</div>
-        <p class="depoimentos-nome">Tiago Carvalho</p>
-        <p class="depoimentos-texto">"Buscava uma forma de me atualizar e encontrei na Prisma Cursos a oportunidade perfeita. O curso foi direto ao ponto e já aplico os conhecimentos no meu trabalho."</p>
-      </div>
-
-      <div class="depoimentos-card">
-        <img class="depoimentos-avatar" src="assets/img/GuilhermeOliveira.jpeg" alt="Guilherme Oliveira">
-        <div class="depoimentos-estrelas">☆☆☆☆☆</div>
-        <p class="depoimentos-nome">Guilherme Oliveira</p>
-        <p class="depoimentos-texto">"Eu tinha alguma experiência na área, mas o curso me deu segurança para entrar no mercado. Hoje trabalho em uma empresa de tecnologia e continuo aprendendo."</p>
-      </div>
-
-      <div class="depoimentos-card">
-        <img class="depoimentos-avatar" src="assets/img/EstherBianchi.jpg" alt="Esther Bianchi">
-        <div class="depoimentos-estrelas">☆☆☆☆☆</div>
-        <p class="depoimentos-nome">Esther Bianchi</p>
-        <p class="depoimentos-texto">"A Prisma Cursos me ajudou a conquistar meu primeiro estágio. As aulas são práticas e os professores são muito qualificados."</p>
-      </div>
-
-    </div>
-  </div>
-</section>
   </main>
 
   <!-- ============ FOOTER ============ -->
