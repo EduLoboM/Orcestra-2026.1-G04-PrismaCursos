@@ -199,3 +199,26 @@ cd css/scss
     </td>
   </tr>
 </table>
+
+---
+
+### 🏷️ Sistema de Desconto Progressivo (Gamificação 2)
+Para incentivar a exploração da página e aumentar o engajamento do usuário, foi implementada uma mecânica de desconto dinâmico via JavaScript:
+* **Gatilho de Ativação:** O usuário ganha **+5% de desconto acumulado** ao clicar em seções-chave de engajamento na navegação:
+  * `Cursos`
+  * `Quem Somos`
+  * `Contato`
+* **Comportamento Visual:** A cada clique, o estado global da aplicação é atualizado, disparando uma transição suave no CSS que altera a cor de fundo do selo (triângulo de oferta) e atualiza o texto da porcentagem em tempo real.
+
+---
+
+### 🧪 Validação de Formulário 
+Garante a integridade e a qualidade dos dados coletados antes do envio do formulário de cadastro, aplicando regras rígidas de validação em JavaScript:
+
+| Campo | Regra de Validação | Objetivo do Critério |
+| :--- | :--- | :--- |
+| **E-mail** | Presença obrigatória dos caracteres `@` e `.` | Evita formatos de texto inválidos e garante a estrutura padrão de comunicação. |
+| **Celular** | String estritamente numérica com **10 ou 11 dígitos** | Valida o padrão nacional de telefonia (com DDD), aceitando tanto números fixos quanto celulares com o nono dígito. |
+| **Curso** | Verificação de correspondência (*Match*) em uma lista predefinida | Impede a inserção manual de dados corrompidos ou cursos inexistentes na plataforma, validando contra a array oficial de ofertas. |
+
+> 💡 **Nota de UX:** Caso algum campo não cumpra os critérios acima, o envio do formulário é interceptado via `preventDefault()`, e o sistema exibe alertas visuais intuitivos para que o usuário corrija as informações sem perder o progresso.
