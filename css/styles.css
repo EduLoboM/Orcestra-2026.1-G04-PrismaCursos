@@ -1342,7 +1342,7 @@ a {
 /* ============ FOOTER ============ */
 #footer {
   background-color: #000000;
-  height: 95px;
+  height: 80px;
   display: flex;
   justify-content: center;
   align-items: center;
@@ -1357,29 +1357,32 @@ a {
 }
 
 .footer-logo-img {
-  width: 77px;
-  height: 77px;
+  width: 60px;
+  height: 60px;
   object-fit: contain;
 }
 
 .footer-logo-text {
   font-family: var(--fonte-titulo);
   font-weight: 700;
-  font-size: 48px;
+  font-size: 44px;
   line-height: 44px;
   color: #ffffff;
   letter-spacing: -0.02em;
   text-transform: uppercase;
 }
 
-@media (max-width: 480px) {
-  .footer-logo-text {
-    font-size: 32px;
-    line-height: 30px;
+@media (max-width: 768px) {
+  #footer {
+    height: 60px;
   }
   .footer-logo-img {
-    width: 60px;
-    height: 60px;
+    width: 40px;
+    height: 40px;
+  }
+  .footer-logo-text {
+    font-size: 24px;
+    line-height: 24px;
   }
 }
 
