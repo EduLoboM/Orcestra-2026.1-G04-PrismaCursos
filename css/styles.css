@@ -1856,3 +1856,167 @@ a {
     line-height: 1.5;
   }
 }
+
+/* ---------- Carrossel de Cursos ---------- */
+#carrossel-cursos {
+  background-color: #121212;
+  padding: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.carrossel-container {
+  width: 100%;
+  max-width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 0;
+  box-shadow: none;
+  aspect-ratio: 1650 / 960;
+  border: none;
+}
+
+.carrossel-wrapper {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.carrossel-slide {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.8s cubic-bezier(0.4, 0, 0.2, 1),
+              visibility 0.8s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 1;
+}
+
+.carrossel-slide.active {
+  opacity: 1;
+  visibility: visible;
+  z-index: 2;
+}
+
+.carrossel-slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Setas de Controle */
+.carrossel-btn {
+  width: 75px;
+  height: 75px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  z-index: 10;
+  outline: none;
+}
+
+.carrossel-btn svg {
+  stroke: #ffffff;
+  transition: stroke 0.3s ease;
+}
+
+.carrossel-btn:hover {
+  background-color: #ffffff;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.carrossel-btn:hover svg {
+  stroke: #000000;
+}
+
+.carrossel-btn.prev {
+  left: 40px;
+}
+
+.carrossel-btn.next {
+  right: 40px;
+}
+
+/* Dots Indicadores */
+.carrossel-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 15px;
+  z-index: 10;
+}
+
+.carrossel-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  border: 2px solid #ffffff;
+  background-color: transparent;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  padding: 0;
+  outline: none;
+}
+
+.carrossel-dot.active {
+  background-color: #ffffff;
+  box-shadow: 0 0 12px rgba(255, 255, 255, 0.8);
+  transform: scale(1.15);
+}
+
+/* Responsividade do Carrossel */
+@media (max-width: 1024px) {
+  .carrossel-btn {
+    width: 60px;
+    height: 60px;
+  }
+
+  .carrossel-btn.prev {
+    left: 20px;
+  }
+
+  .carrossel-btn.next {
+    right: 20px;
+  }
+}
+
+@media (max-width: 768px) {
+  .carrossel-btn {
+    width: 45px;
+    height: 45px;
+  }
+
+  .carrossel-btn.prev {
+    left: 10px;
+  }
+
+  .carrossel-btn.next {
+    right: 10px;
+  }
+
+  .carrossel-dots {
+    bottom: 15px;
+    gap: 10px;
+  }
+
+  .carrossel-dot {
+    width: 12px;
+    height: 12px;
+  }
+}

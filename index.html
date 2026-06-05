@@ -150,6 +150,43 @@
       </div>
     </section>
 
+    <!-- ============ CARROSSEL DE FOTOS ============ -->
+    <section id="carrossel-cursos">
+      <div class="carrossel-container">
+        <!-- Wrapper dos Slides -->
+        <div class="carrossel-wrapper">
+          <div class="carrossel-slide active" data-slide="0">
+            <img src="assets/carousel-slide-1.png" alt="Trilha de Tecnologia">
+          </div>
+          <div class="carrossel-slide" data-slide="1">
+            <img src="assets/carousel-slide-2.png" alt="Trilha de Design">
+          </div>
+          <div class="carrossel-slide" data-slide="2">
+            <img src="assets/carousel-slide-3.png" alt="Trilha de Gestão">
+          </div>
+        </div>
+
+        <!-- Controles (Setas) -->
+        <button class="carrossel-btn prev" id="btn-carrossel-prev" aria-label="Slide anterior">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="15 18 9 12 15 6"></polyline>
+          </svg>
+        </button>
+        <button class="carrossel-btn next" id="btn-carrossel-next" aria-label="Próximo slide">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+            <polyline points="9 18 15 12 9 6"></polyline>
+          </svg>
+        </button>
+
+        <!-- Indicadores (Dots) -->
+        <div class="carrossel-dots" id="dots-carrossel">
+          <button class="carrossel-dot active" data-slide="0" aria-label="Slide 1"></button>
+          <button class="carrossel-dot" data-slide="1" aria-label="Slide 2"></button>
+          <button class="carrossel-dot" data-slide="2" aria-label="Slide 3"></button>
+        </div>
+      </div>
+    </section>
+
     <!-- ============ SEÇÃO: QUEM SOMOS ============ -->
     <section id="quem-somos" class="quem-somos-container">
       <div class="conteudo-texto">

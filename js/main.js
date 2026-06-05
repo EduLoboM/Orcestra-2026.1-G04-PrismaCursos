@@ -41,7 +41,6 @@ document.addEventListener("DOMContentLoaded", () => {
         hamburger.setAttribute("aria-expanded", "false");
       }
     });
-
     // Fecha o menu com a tecla Escape
     document.addEventListener("keydown", (e) => {
       if (e.key === "Escape" && overlay.classList.contains("open")) {
@@ -50,6 +49,73 @@ document.addEventListener("DOMContentLoaded", () => {
         hamburger.setAttribute("aria-expanded", "false");
       }
     });
+  }
+
+  // ========== Lógica do Carrossel de Cursos ==========
+  const slides = document.querySelectorAll(".carrossel-slide");
+  const dots = document.querySelectorAll(".carrossel-dot");
+  const prevBtn = document.getElementById("btn-carrossel-prev");
+  const nextBtn = document.getElementById("btn-carrossel-next");
+  let slideIndex = 0;
+  let carouselInterval;
+
+  function showSlide(index) {
+    if (slides.length === 0) return;
+
+    if (index >= slides.length) {
+      slideIndex = 0;
+    } else if (index < 0) {
+      slideIndex = slides.length - 1;
+    } else {
+      slideIndex = index;
+    }
+
+    slides.forEach((slide) => slide.classList.remove("active"));
+    dots.forEach((dot) => dot.classList.remove("active"));
+
+    slides[slideIndex].classList.add("active");
+    if (dots[slideIndex]) {
+      dots[slideIndex].classList.add("active");
+    }
+  }
+
+  function nextSlide() {
+    showSlide(slideIndex + 1);
+  }
+
+  function startAutoplay() {
+    stopAutoplay();
+    carouselInterval = setInterval(nextSlide, 5000);
+  }
+
+  function stopAutoplay() {
+    if (carouselInterval) {
+      clearInterval(carouselInterval);
+    }
+  }
+
+  if (prevBtn && nextBtn) {
+    prevBtn.addEventListener("click", () => {
+      showSlide(slideIndex - 1);
+      startAutoplay();
+    });
+
+    nextBtn.addEventListener("click", () => {
+      showSlide(slideIndex + 1);
+      startAutoplay();
+    });
+  }
+
+  dots.forEach((dot, idx) => {
+    dot.addEventListener("click", () => {
+      showSlide(idx);
+      startAutoplay();
+    });
+  });
+
+  // Inicializa o autoplay
+  if (slides.length > 0) {
+    startAutoplay();
   }
 });
 
