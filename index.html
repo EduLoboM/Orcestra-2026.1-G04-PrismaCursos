@@ -151,40 +151,151 @@
     </section>
 
     <!-- ============ CARROSSEL DE CURSOS ============ -->
-    <section id="carrossel-cursos">
-      <div class="carrossel-container">
-        <!-- Wrapper dos Slides -->
-        <div class="carrossel-wrapper">
-          <div class="carrossel-slide active" data-slide="0">
-            <img src="assets/carousel-slide-1.png" alt="Trilha de Tecnologia">
-          </div>
-          <div class="carrossel-slide" data-slide="1">
-            <img src="assets/carousel-slide-2.png" alt="Trilha de Design">
-          </div>
-          <div class="carrossel-slide" data-slide="2">
-            <img src="assets/carousel-slide-3.png" alt="Trilha de Gestão">
-          </div>
-        </div>
-        
-        <!-- Controles (Setas) -->
-        <button class="carrossel-btn prev" id="btn-carrossel-prev" aria-label="Slide anterior">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="15 18 9 12 15 6"></polyline>
-          </svg>
-        </button>
-        <button class="carrossel-btn next" id="btn-carrossel-next" aria-label="Próximo slide">
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
-            <polyline points="9 18 15 12 9 6"></polyline>
-          </svg>
-        </button>
+    <section id="cursos" class="secao-cursos">
+      <h2 class="titulo-cursos">NOSSOS CURSOS</h2>
 
-        <!-- Indicadores (Dots) -->
-        <div class="carrossel-dots" id="dots-carrossel">
-          <button class="carrossel-dot active" data-slide="0" aria-label="Slide 1"></button>
-          <button class="carrossel-dot" data-slide="1" aria-label="Slide 2"></button>
-          <button class="carrossel-dot" data-slide="2" aria-label="Slide 3"></button>
+      <div class="filtros-cursos">
+        <button class="botao-filtro ativo" data-categoria="tecnologia">TECNOLOGIA</button>
+        <button class="botao-filtro" data-categoria="gestao">GESTÃO</button>
+        <button class="botao-filtro" data-categoria="design">DESIGN</button>
+      </div>
+
+      <div class="container-carrossel">
+        <div class="trilha-carrossel">
+
+          <div class="cartao-curso" data-categoria="tecnologia">
+            <img src="assets/bg-fullstack.png" alt="Fundo Desenvolvimento Web" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-tec">TECNOLOGIA</span>
+              <h3>Desenvolvimento<br>Web Full Stack</h3>
+              <div class="grupo-habilidades">
+                <span>HTML</span>
+                <span>CSS</span>
+                <span>React</span>
+                <span>Node.js</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso" data-categoria="tecnologia">
+            <img src="assets/bg-analytics.png" alt="Fundo Data Analytics" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-tec">TECNOLOGIA</span>
+              <h3>Data Analytics</h3>
+              <div class="grupo-habilidades">
+                <span>Excel</span>
+                <span>Power BI</span>
+                <span>SQL</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso" data-categoria="tecnologia">
+            <img src="assets/bg-cyber.png" alt="Fundo Cybersecurity" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-tec">TECNOLOGIA</span>
+              <h3>Cybersecurity</h3>
+              <div class="grupo-habilidades">
+                <span>Segurança</span>
+                <span>Redes</span>
+                <span>Criptografia</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso oculto" data-categoria="gestao">
+            <img src="assets/bg-gestao-projetos.png" alt="Fundo Gestão de Projetos" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-gestao">GESTÃO</span>
+              <h3>Gestão<br>de Projetos</h3>
+              <div class="grupo-habilidades">
+                <span>Scrum</span>
+                <span>Kanban</span>
+                <span>Agilidade</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso oculto" data-categoria="gestao">
+            <img src="assets/bg-marketing.png" alt="Fundo Marketing Digital" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-gestao">GESTÃO</span>
+              <h3>Marketing Digital</h3>
+              <div class="grupo-habilidades">
+                <span>SEO</span>
+                <span>Tráfego Pago</span>
+                <span>Redes Sociais</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso oculto" data-categoria="gestao">
+            <img src="assets/bg-lideranca.png" alt="Fundo Liderança" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-gestao">GESTÃO</span>
+              <h3>Liderança e<br>Gestão de Pessoas</h3>
+              <div class="grupo-habilidades">
+                <span>Liderança</span>
+                <span>Comunicação</span>
+                <span>Team Building</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso oculto" data-categoria="design">
+            <img src="assets/bg-uiux.png" alt="Fundo UI/UX" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-design">DESIGN</span>
+              <h3>UI/UX Design</h3>
+              <div class="grupo-habilidades">
+                <span>Figma</span>
+                <span>Wireframe</span>
+                <span>Protótipo</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso oculto" data-categoria="design">
+            <img src="assets/bg-grafico.png" alt="Fundo Design Gráfico" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-design">DESIGN</span>
+              <h3>Design Gráfico</h3>
+              <div class="grupo-habilidades">
+                <span>Photoshop</span>
+                <span>Illustrator</span>
+                <span>Branding</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
+          <div class="cartao-curso oculto" data-categoria="design">
+            <img src="assets/bg-motion.png" alt="Fundo Motion Design" class="fundo-cartao">
+            <div class="conteudo-cartao">
+              <span class="etiqueta etiqueta-design">DESIGN</span>
+              <h3>Motion Design</h3>
+              <div class="grupo-habilidades">
+                <span>After Effects</span>
+                <span>Animação</span>
+                <span>Vídeo</span>
+              </div>
+              <a href="#contato" class="botao-saiba-mais">Saiba mais &rarr;</a>
+            </div>
+          </div>
+
         </div>
       </div>
+
+      <p class="texto-informativo-cursos" id="texto-informativo-cursos">
+        Aprenda programação, dados e segurança digital com foco em prática e inovação.
+      </p>
     </section>
 
     <!-- ============ SEÇÃO: QUEM SOMOS ============ -->
@@ -369,5 +480,6 @@
 
   <script src="js/main.js"></script>
   <script src="js/quiz.js"></script>
+  <script src="js/cursos.js"></script>
 </body>
 </html>
